@@ -136,7 +136,4 @@ class ClipboardItem {
   }
 }
 
-export default connect(
-  null,
-  { addCommand },
-)(Clipboard);
+export default connect(null, { addCommand })(Clipboard);
