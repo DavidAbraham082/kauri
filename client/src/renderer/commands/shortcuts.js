@@ -1,5 +1,5 @@
 /** @format */
-import { addShortcut } from "redux/actions";
+//import { addShortcut } from "redux/actions";
 import * as fs from "fs";
 
 /**

@@ -6,6 +6,7 @@ import { h, Component } from "preact";
 import { configureMenu } from "helpers/menu";
 
 import Editor from "components/Editor";
+import Clipboard from "components/Clipboard";
 
 /**
  * Root application component.
@@ -15,6 +16,7 @@ export default class Application extends Component {
 
   render = () => (
     <div class="app">
+      <Clipboard />
       <Editor />
     </div>
   );

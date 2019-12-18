@@ -24,9 +24,15 @@ class Clipboard extends Component {
   }
 
   componentDidMount() {
-    this.props.addCommand("Clipboard.Copy", "Copy", this.doClipboardCopy);
+    this.props.addCommand("clipboard.copy", "copy", this.doClipboardCopy);
     this.props.addDefaultShortcut("clipboard.copy", {
       modifiers: ["ctrl"],
+      key: "c",
+    });
+
+    this.props.addCommand("clipboard.showClips", "showClips", this.showClips);
+    this.props.addDefaultShortcut("clipboard.showClips", {
+      modifiers: ["ctrl", "alt"],
       key: "c",
     });
 
@@ -47,6 +53,11 @@ class Clipboard extends Component {
 
   doClipboardPaste() {
     console.log("Clipboard paste");
+  }
+
+  showClips() {
+    console.log("show clips");
+    //show clips
   }
 
   /**
@@ -136,4 +147,4 @@ class ClipboardItem {
   }
 }
 
-export default connect(null, { addCommand })(Clipboard);
+export default connect(null, { addCommand, addDefaultShortcut })(Clipboard);
